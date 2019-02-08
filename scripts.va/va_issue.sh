@@ -3,7 +3,7 @@
 CPUNUM=`cat /proc/cpuinfo | grep processor | wc -l`
 RAMNFO=`free -mh | grep Mem: | awk {'print $2, "total,", $4, "free" '}`
 DISKSZ=`df -h | grep "/$" | awk {'print $2, "total,", $4, "free" '}`
-VA_VER=`/opt/dnssafety/bin/ldap --version`
+VA_VER=`/bin/bash /opt/dnssafety/bin/version.sh`
 
 # some string manupulation magic
 OSINFO_TMP1=`cat /etc/os-release | grep ^VERSION=`
@@ -34,4 +34,4 @@ echo "To use this Virtual Appliance as DNS server - adjust your router settings"
 echo " to use IP address of this box \\4 as DNS server."
 echo 
 echo "Manage filtering settings by editing /opt/dnssafety/etc/config.json file"
-echo    
+echo

@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="0.3.0"
+MAJOR="0.4.0"
 MINOR="6EEA"
 ARCH="amd64"
 

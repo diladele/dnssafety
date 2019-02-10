@@ -24,8 +24,8 @@ echo "IMPORTANT - MANUAL CHANGE REQUIRED!"
 #
 # NOTE!!! the 1005 is the uid of dnssafety user!
 #
-# relabel folder
-chown -R dnssafety:dnssafety /opt/dnssafety
+# relabel folder (note we reuse the bind user here!)
+chown -R bind:bind /opt/dnssafety
 
 # restart all daemons
 service dsdnsd restart

@@ -3,7 +3,7 @@
 # setup some configuration variables
 ARCH=`uname -m`
 MAJOR=0.4.0
-MINOR=9E0B
+MINOR=765E
 
 # get latest version of dns safety
 fetch http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/$ARCH/release/freebsd11/dnssafety-$MAJOR-$ARCH.txz
@@ -17,5 +17,5 @@ if [ $? -ne 0 ]; then
     echo "dsdnsd_enable=\"YES\"" >> /etc/rc.conf
 fi
 
-# relabel folder
-chown -R dnssafety:dnssafety /opt/dnssafety
+# relabel folder (note we reuse the bind user here!)
+chown -R bind:bind /opt/dnssafety

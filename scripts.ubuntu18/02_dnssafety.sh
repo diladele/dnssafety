@@ -8,7 +8,7 @@ fi
 
 # default arc
 MAJOR="0.4.0"
-MINOR="FC08"
+MINOR="2B5A"
 ARCH="amd64"
 
 # download
@@ -18,4 +18,4 @@ wget http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/$ARCH/release/ubuntu18
 dpkg --install dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 
 # relabel folder
-chown -R dnssafety:dnssafety /opt/dnssafety
+chown -R daemon:daemon /opt/dnssafety

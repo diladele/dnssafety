@@ -1,1 +1,1 @@
-# dnssafety-issues
+# dnssafety

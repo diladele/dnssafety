@@ -12,7 +12,7 @@ MINOR="3EFF"
 ARCH="amd64"
 
 # download
-wget http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/$ARCH/release/ubuntu18/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
+wget http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/$ARCH/release/debian9/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 
 # install
 dpkg --install dnssafety-$MAJOR.${MINOR}_$ARCH.deb

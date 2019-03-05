@@ -9,13 +9,12 @@ fi
 # default arc
 MAJOR="0.5.0"
 MINOR="6D2A"
-ARCH="amd64"
 
-# download
-wget http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/$ARCH/release/debian9/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
+# get latest build
+curl -O http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/amd64/release/centos7/dnssafety-${MAJOR}-${MINOR}.x86_64.rpm
 
-# install
-dpkg --install dnssafety-$MAJOR.${MINOR}_$ARCH.deb
-
+# install it
+yum -y --nogpgcheck localinstall dnssafety-${MAJOR}-${MINOR}.x86_64.rpm
+  
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety

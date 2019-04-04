@@ -14,6 +14,3 @@ apt update && apt -y upgrade
 
 # change cloud config to preserve hostname, otherwise our UI cannot set it
 sed -i 's/preserve_hostname: false/preserve_hostname: true/g' /etc/cloud/cloud.cfg
-
-# and now reboot
-reboot

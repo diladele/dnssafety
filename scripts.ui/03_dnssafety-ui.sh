@@ -8,24 +8,14 @@ fi
 
 # default arc
 MAJOR="0.6.0"
-MINOR="A112"
+MINOR="79D6"
 ARCH="amd64"
 
 # download
 wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/ubuntu18/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
-# for debugging
-rm uninstall.sh
-rm reinstall.sh
-rm install.sh
-wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/ubuntu18/uninstall.sh
-wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/ubuntu18/reinstall.sh
-wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/ubuntu18/install.sh
-
-
 # install
-# dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
-bash reinstall.sh
+dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
 # generate the configuration files once
 # sudo -u websafety python3 /opt/websafety/var/console/generate.py
@@ -35,4 +25,3 @@ sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=ubuntu18
 
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety-ui
-

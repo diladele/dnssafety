@@ -7,8 +7,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="0.5.0"
-MINOR="6D2A"
+MAJOR="0.6.0"
+MINOR="0B02"
 ARCH="amd64"
 
 # download

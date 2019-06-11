@@ -7,8 +7,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="0.8.0"
-MINOR="03C1"
+MAJOR="0.9.0"
+MINOR="B27D"
 ARCH="amd64"
 
 # download
@@ -16,9 +16,6 @@ wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/ubunt
 
 # install
 dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
-
-# generate the configuration files once
-# sudo -u websafety python3 /opt/websafety/var/console/generate.py
 
 # let UI of Dns Safety manage the network
 sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=ubuntu18

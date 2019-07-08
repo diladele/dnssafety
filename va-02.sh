@@ -8,7 +8,7 @@ fi
 
 # install dns safety
 pushd scripts.debian10
-bash 02_dnssafety.sh && bash 03_integrate.sh 
+bash 02_dnssafety.sh
 popd
 
 # install dns UI

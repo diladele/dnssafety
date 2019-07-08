@@ -19,3 +19,6 @@ dpkg --install dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety
+
+# and restart dns safety dns server
+systemctl restart dsdnsd

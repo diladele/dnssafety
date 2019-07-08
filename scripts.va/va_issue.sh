@@ -28,10 +28,10 @@ echo
 echo "Appliance Version   $VA_VER"
 echo "Default Username    root"
 echo "Default Password    Passw0rd"
-echo "Installation Dir    /opt/websafety"
+echo "Installation Dirs   /opt/dnssafety and /opt/dnssafety-ui"
 echo 
 echo "To use this Virtual Appliance as DNS server - adjust your router settings"
 echo " to use IP address of this box \\4 as DNS server."
 echo 
-echo "Manage filtering settings by editing /opt/dnssafety/etc/config.json file"
+echo "Manage filtering settings using Admin UI from your browser at at http://\\4/"
 echo

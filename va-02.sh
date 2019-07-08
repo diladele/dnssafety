@@ -13,10 +13,9 @@ popd
 
 # install dns UI
 pushd scripts.ui
-bash 01_update.sh && \
-bash 02_apache.sh && \
-bash 03_dnssafety-ui.sh && \
-bash 04_integrate.sh
+bash 01_apache.sh && \
+bash 02_dnssafety-ui.sh && \
+bash 03_integrate.sh
 popd
 
 # install va

@@ -12,13 +12,13 @@ MINOR="486C"
 ARCH="amd64"
 
 # download
-wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/ubuntu18/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
+wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/debian10/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
 # install
 dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
 # let UI of Dns Safety manage the network
-sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=ubuntu18
+sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=debian10
 
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety-ui

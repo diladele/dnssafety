@@ -10,10 +10,10 @@ fi
 apt -y autoremove
 
 # reset system root password to match documented one
-sudo echo root:Passw0rd | sudo chpasswd
+echo root:Passw0rd | chpasswd
 
-# disable the user we used to build the virtual appliance
-passwd user -l
+# disable the user we used to build the virtual appliance and delete him
+passwd builder -l && userdel -r builder
 
 # exit successfully
 echo "VA generated successfully, please reboot"

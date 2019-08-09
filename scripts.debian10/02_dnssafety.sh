@@ -7,15 +7,18 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="0.11.0"
-MINOR="5F82"
+MAJOR="0.12.0"
+MINOR="C1E5"
 ARCH="amd64"
 
 # download
-wget http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/$ARCH/release/debian9/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
+wget http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/$ARCH/release/debian10/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 
 # install
 dpkg --install dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety
+
+# and restart dns safety dns server
+systemctl restart dsdnsd

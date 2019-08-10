@@ -8,7 +8,7 @@ fi
 
 # default arc
 MAJOR="0.12.0"
-MINOR="C1E5"
+MINOR="0DD5"
 
 # get latest build
 curl -O http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/amd64/release/centos7/dnssafety-${MAJOR}-${MINOR}.x86_64.rpm

@@ -6,4 +6,11 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-pushd scripts.debian10 && bash 01_update.sh && popd
+# default os
+OSNAME="debian10"
+if [ -f "/etc/lsb-release" ]; then
+    OSNAME="ubuntu18"
+fi
+
+# run first step
+pushd scripts.$OSNAME && bash 01_update.sh && popd

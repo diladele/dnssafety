@@ -15,7 +15,7 @@ ARCH="amd64"
 OSNAME="debian10"
 if [ -f "/etc/lsb-release" ]; then
     OSNAME="ubuntu18"
-else 
+fi
 
 # download
 wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/$OSNAME/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb

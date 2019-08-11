@@ -14,14 +14,12 @@ fi
 
 # install dns safety
 pushd scripts.$OSNAME
-bash 02_dnssafety.sh
+bash 02_dnssafety.sh && bash 03_integrate.sh
 popd
 
 # install dns UI
 pushd scripts.ui
-bash 01_apache.sh && \
-bash 02_dnssafety-ui.sh && \
-bash 03_integrate.sh
+bash 01_apache.sh && bash 02_dnssafety-ui.sh && bash 03_integrate.sh
 popd
 
 # install va

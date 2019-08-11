@@ -19,5 +19,5 @@ rm /etc/resolv.conf
 # recreate default one
 echo "nameserver 127.0.0.1" > /etc/resolv.conf
 
-# and restart dns safety dns server
+# restart dns safety dns server
 systemctl restart dsdnsd

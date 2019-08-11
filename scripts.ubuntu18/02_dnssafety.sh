@@ -19,3 +19,4 @@ dpkg --install dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety
+

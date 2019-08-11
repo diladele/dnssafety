@@ -20,21 +20,3 @@ dpkg --install dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety
 
-# restart dns safety dns server
-systemctl restart dsdnsd
-
-# note that on ubuntu 18 additional steps are required
-
-# disable and remove systemd resolver
-systemctl disable systemd-resolved
-systemctl stop systemd-resolved
-
-# resolv.conf is a link under systemd resolver
-ls -lh /etc/resolv.conf 
-
-# remove it
-rm /etc/resolv.conf
-
-# recreate default one
-echo "nameserver 127.0.0.1" > /etc/resolv.conf
-

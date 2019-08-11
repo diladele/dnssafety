@@ -21,3 +21,10 @@ echo "nameserver 127.0.0.1" > /etc/resolv.conf
 
 # restart dns safety dns server
 systemctl restart dsdnsd
+systemctl status dsdnsd
+
+# wait for the dns resolve to come up
+sleep 10
+
+# test it works nicely
+dig welcome.dnssafety.io @127.0.0.1

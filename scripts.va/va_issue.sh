@@ -16,7 +16,7 @@ OSINFO_DIST=${OSINFO_TMP2#NAME=}
 OSINFO_DIST=${OSINFO_DIST#\"}
 OSINFO_DIST=${OSINFO_DIST%\"}
 
-echo "Welcome to DNS Safety virtual appliance!"
+echo "Welcome to DnsSafety virtual appliance!"
 echo 
 echo "Operating System    $OSINFO_DIST, $OSINFO_NAME"
 echo "System Kernel       \\r"
@@ -33,5 +33,6 @@ echo
 echo "To use this Virtual Appliance as DNS server - adjust your router settings"
 echo "to use IP address of this box \\4 as DNS server."
 echo 
-echo "Manage filtering settings using Admin UI from your browser at http://\\4/"
+echo "Manage filtering settings using Admin UI from your browser at http://\\4:8000/"
+echo "Note the port 8000, ports 80 and 443 are used to show Access Denied page!"
 echo

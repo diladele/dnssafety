@@ -8,7 +8,7 @@ fi
 
 # default arc
 MAJOR="0.13.0"
-MINOR="0DEB"
+MINOR="8438"
 ARCH="amd64"
 
 # default os

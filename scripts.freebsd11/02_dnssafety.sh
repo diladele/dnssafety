@@ -3,7 +3,7 @@
 # setup some configuration variables
 ARCH=`uname -m`
 MAJOR=0.13.0
-MINOR=9898
+MINOR=5980
 
 # get latest version of dns safety
 fetch http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/$ARCH/release/freebsd11/dnssafety-$MAJOR-$ARCH.txz

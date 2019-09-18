@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # install pip3 and other python modules, ldap/sasl (we need it for python ldap module)
-apt -y install python3-pip python3-dev libjpeg-dev zlib1g-dev libldap2-dev libsasl2-dev libssl-dev sudo
+apt -y install python3-pip python3-dev libjpeg-dev zlib1g-dev libldap2-dev libsasl2-dev libssl-dev sudo dnsutils tmux
 
 # install django and all other modules
 pip3 install django==2.2.3

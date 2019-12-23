@@ -13,4 +13,4 @@ if [ -f "/etc/lsb-release" ]; then
 fi
 
 # run first step
-pushd scripts.$OSNAME && bash 01_update.sh && popd
+pushd core.$OSNAME && bash 01_update.sh && popd

@@ -11,6 +11,12 @@ MAJOR="0.15.0"
 MINOR="3702"
 ARCH="amd64"
 
+# see if it is RPI or not?
+cat /proc/cpuinfo | grep -m 1 ARMv7 > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    ARCH="armhf"
+fi
+
 # default os
 OSNAME="debian10"
 if [ -f "/etc/lsb-release" ]; then

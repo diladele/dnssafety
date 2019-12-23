@@ -13,24 +13,18 @@ if [ -f "/etc/lsb-release" ]; then
 fi
 
 # install dns safety
-pushd scripts.$OSNAME
+pushd core.$OSNAME
 bash 02_dnssafety.sh && bash 03_integrate.sh
 popd
 
 # install dns UI
-pushd scripts.ui
+pushd ui.deb
 bash 01_apache.sh && bash 02_dnssafety-ui.sh && bash 03_integrate.sh
-popd
-
-# install va
-pushd scripts.va
-bash 01_login.sh && bash 02_harden.sh
 popd
 
 # tell 
 echo "SUCCESS"
 echo "SUCCESS"
-echo "SUCCESS --- VA is Ready (check the license and publish it) ---"
-cat /opt/dnssafety/etc/license.pem | grep "Not After"
+echo "SUCCESS Now run va.sh script for the appliance or azure-*.sh or aws-*.sh for cloud instances!"
 echo "SUCCESS"
 echo "SUCCESS"

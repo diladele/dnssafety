@@ -11,6 +11,12 @@ MAJOR="0.15.0"
 MINOR="BF8A"
 ARCH="amd64"
 
+# see if it is RPI or not?
+cat /proc/cpuinfo | grep -m 1 ARMv7 > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    ARCH="armhf"
+fi
+
 # download
 wget http://packages.diladele.com/dnssafety-core/$MAJOR.$MINOR/$ARCH/release/debian10/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 

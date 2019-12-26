@@ -10,7 +10,7 @@ fi
 apt -y install python3-pip python3-dev libjpeg-dev zlib1g-dev libldap2-dev libsasl2-dev libssl-dev sudo dnsutils tmux
 
 # install django and all other modules
-pip3 install django==2.2.3
+pip3 install django==3.0.0
 pip3 install pytz
 pip3 install tld
 pip3 install requests
@@ -27,9 +27,6 @@ pip3 uninstall python-ldap
 
 # ok this one is fine
 pip3 install python-ldap
-
-# now install reportlab
-pip3 install reportlab==3.4.0
 
 # install apache and mod_wsgi and some other useful programs
 apt -y install apache2 libapache2-mod-wsgi-py3 htop mc

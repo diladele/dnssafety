@@ -1,0 +1,11 @@
+[Unit]
+Description=Update root password for Dns Safety virtual appliance once
+
+[Service]
+Type=oneshot
+ExecStart=/opt/dnssafety/bin/chpass_aws.sh
+StandardOutput=file:/opt/dnssafety/var/log/chpass_aws.log
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

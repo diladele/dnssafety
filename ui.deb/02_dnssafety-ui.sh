@@ -29,8 +29,10 @@ wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/$OSNA
 # install
 dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
-# let UI of Dns Safety manage the network
-sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=$OSNAME
+# let UI of Dns Safety manage the network ONLY on amd64 based Debian 10 or Ubuntu 18, on RPI it is left as not managed
+if [ "$ARCH" != "armhf" ]; then
+    sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=$OSNAME    
+fi
 
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety-ui

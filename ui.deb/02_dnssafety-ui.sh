@@ -7,9 +7,15 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="0.14.0"
-MINOR="5BA0"
+MAJOR="0.15.0"
+MINOR="85C4"
 ARCH="amd64"
+
+# see if it is RPI or not?
+cat /proc/cpuinfo | grep -m 1 ARMv7 > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    ARCH="armhf"
+fi
 
 # default os
 OSNAME="debian10"
@@ -23,8 +29,10 @@ wget http://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/$OSNA
 # install
 dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
-# let UI of Dns Safety manage the network
-sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=$OSNAME
+# let UI of Dns Safety manage the network ONLY on amd64 based Debian 10 or Ubuntu 18, on RPI it is left as not managed
+if [ "$ARCH" != "armhf" ]; then
+    sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=$OSNAME    
+fi
 
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety-ui

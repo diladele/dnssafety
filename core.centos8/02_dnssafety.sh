@@ -7,11 +7,11 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="0.14.0"
-MINOR="7D5A"
+MAJOR="0.15.0"
+MINOR="D014"
 
 # get latest build
-curl -O http://packages.diladele.com/dnssafety/$MAJOR.$MINOR/amd64/release/centos7/dnssafety-${MAJOR}-${MINOR}.x86_64.rpm
+curl -O http://packages.diladele.com/dnssafety-core/$MAJOR.$MINOR/amd64/release/centos8/dnssafety-${MAJOR}-${MINOR}.x86_64.rpm
 
 # install it
 yum -y --nogpgcheck localinstall dnssafety-${MAJOR}-${MINOR}.x86_64.rpm

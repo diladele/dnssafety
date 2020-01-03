@@ -6,24 +6,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-# default os
-OSNAME="debian10"
-if [ -f "/etc/lsb-release" ]; then
-    OSNAME="ubuntu18"
-fi
-
-# install dns safety
-pushd scripts.$OSNAME
-bash 02_dnssafety.sh && bash 03_integrate.sh
-popd
-
-# install dns UI
-pushd scripts.ui
-bash 01_apache.sh && bash 02_dnssafety-ui.sh && bash 03_integrate.sh
-popd
-
 # install va
-pushd scripts.va
+pushd appliance/va
 bash 01_login.sh && bash 02_harden.sh
 popd
 

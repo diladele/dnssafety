@@ -2,7 +2,7 @@
 
 # setup some configuration variables
 ARCH=`uname -m`
-MAJOR=0.15.0
+MAJOR=0.16.0
 MINOR=D014
 
 # get latest version of dns safety

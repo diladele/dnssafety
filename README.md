@@ -4,4 +4,4 @@ Dns Safety is a DNS forwarding server (like dnsmasq) with extensive filtering ca
 
 Dns Safety is supposed to be deployed as primary DNS server in your local network and can forward DNS requests to your ISP's DNS server, Google Public DNS, OpenDNS and other third party DNS providers. 
 
-See more information at https://dnssafety.io/
+See more information at https://dnssafety.diladele.com/

@@ -7,8 +7,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="0.15.0"
-MINOR="D014"
+MAJOR="0.16.0"
+MINOR="2D26"
 
 # get latest build
 curl -O http://packages.diladele.com/dnssafety-core/$MAJOR.$MINOR/amd64/release/centos8/dnssafety-${MAJOR}-${MINOR}.x86_64.rpm

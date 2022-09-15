@@ -27,4 +27,4 @@ systemctl status dsdnsd
 sleep 10
 
 # test it works nicely
-dig welcome.dnssafety.io @127.0.0.1
+dig verify.diladele.com @127.0.0.1

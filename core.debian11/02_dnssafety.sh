@@ -21,7 +21,7 @@ fi
 apt install -y wget
 
 # download
-wget http://packages.diladele.com/dnssafety-core/$MAJOR.$MINOR/$ARCH/release/debian11/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
+wget https://packages.diladele.com/dnssafety-core/$MAJOR.$MINOR/$ARCH/release/debian11/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 
 # install
 dpkg --install dnssafety-$MAJOR.${MINOR}_$ARCH.deb

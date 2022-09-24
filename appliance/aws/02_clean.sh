@@ -17,8 +17,8 @@ find /root/ /home/*/ -name .cvspass -exec rm –f {} \;
 find /root/.subversion/auth/svn.simple/ /home/*/.subversion/auth/svn.simple/ -exec rm –rf {} \;
 
 # remove all scripts
-cd /home/ubuntu
-rm -Rf core.ubuntu18
+cd /home/admin
+rm -Rf core.debian11
 rm -Rf ui.deb
 rm -Rf appliance
 

@@ -7,9 +7,9 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default os
-OSNAME="debian10"
+OSNAME="debian11"
 if [ -f "/etc/lsb-release" ]; then
-    OSNAME="ubuntu18"
+    OSNAME="ubuntu20"
 fi
 
 # run first step

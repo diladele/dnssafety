@@ -7,9 +7,9 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default os
-OSNAME="debian10"
+OSNAME="debian11"
 if [ -f "/etc/lsb-release" ]; then
-    OSNAME="ubuntu18"
+    OSNAME="ubuntu20"
 fi
 
 # install dns safety
@@ -19,7 +19,7 @@ popd
 
 # install dns UI
 pushd ui.deb
-bash 01_apache.sh && bash 02_dnssafety-ui.sh && bash 03_integrate.sh
+bash 01_apache.sh && bash 02_ui.sh && bash 03_integrate.sh
 popd
 
 # tell 

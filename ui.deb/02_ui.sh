@@ -8,7 +8,7 @@ fi
 
 # default arc
 MAJOR="2.0.0"
-MINOR="48D8"
+MINOR="FA52"
 ARCH="amd64"
 
 # see if it is RPI or not?
@@ -18,9 +18,9 @@ if [ $? -eq 0 ]; then
 fi
 
 # default os
-OSNAME="debian11"
+OSNAME="debian12"
 if [ -f "/etc/lsb-release" ]; then
-    OSNAME="ubuntu20"
+    OSNAME="ubuntu22"
 fi
 
 # download
@@ -29,10 +29,5 @@ wget https://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/$OSN
 # install
 dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
-# first relabel folder
+# relabel folder
 chown -R daemon:daemon /opt/dnssafety-ui
-
-# let UI of Dns Safety manage the network ONLY on amd64 based Debian 11 or Ubuntu 20, on RPI it is left as not managed
-if [ "$ARCH" != "armhf" ]; then
-    sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=$OSNAME    
-fi

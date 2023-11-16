@@ -22,15 +22,5 @@ python3 -m venv /opt/dnssafety-ui/env
 # install required packages into virtual environment
 /opt/dnssafety-ui/env/bin/pip3 install -r /opt/dnssafety-ui/var/console/requirements.txt
 
-# sync ui and actual files in disk (note UI does not manage network by default)
-# sudo -u proxy /opt/websafety-ui/env/bin/python3 /opt/websafety-ui/var/console/generate.py --core
-# sudo -u websafety /opt/websafety-ui/env/bin/python3 /opt/websafety-ui/var/console/generate.py --ui
-
-## ???
-# let UI of Dns Safety manage the network ONLY on amd64 based Debian 11 or Ubuntu 20, on RPI it is left as not managed
-#if [ "$ARCH" != "armhf" ]; then
-#    sudo -u daemon python3 /opt/dnssafety-ui/var/console/utils.py --network=$OSNAME    
-#fi
-
 # relabel folder
 chown -R daemon:daemon /opt/dnssafety-ui

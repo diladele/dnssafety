@@ -42,7 +42,7 @@ fi
 
 if [ "$ARCH" != "armhf" ]; then
     # note how we running the python from venv here
-    sudo -u daemon /opt/dnssafety-ui/env/bin/python3 /opt/dnssafety-ui/var/console/utils.py --network=$OSNAME    
+    sudo -u daemon /opt/dnssafety-ui/env/bin/python3 /opt/dnssafety-ui/var/console/utils.py --network=debian12
 fi
 
 #

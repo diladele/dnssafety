@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # install various required python packages from the system repo
-apt install -y python3-dev libjpeg-dev zlib1g-dev libldap2-dev libsasl2-dev libssl-dev libatlas-base-dev g++
+apt install -y python3-dev libjpeg-dev zlib1g-dev libldap2-dev libsasl2-dev libssl-dev libatlas-base-dev g++ patch
 
 # install different command on debian 12 or ubuntu
 if [ -f "/etc/lsb-release" ]; then

@@ -18,6 +18,9 @@ systemctl stop systemd-resolved
 sed -i -e 's/^Extensions\.Enabled=.*$/Extensions.Enabled=y/' /etc/waagent.conf
 sed -i -e 's/^AutoUpdate\.Enabled=.*$/AutoUpdate.Enabled=y/' /etc/waagent.conf
 
+# disable network management from Admin UI on Azure
+patch /opt/dnssafety-ui/var/console/node/models.py < models.py.patch
+
 #
 # enable login with older ssh keys (required for Azure Certification Tools)
 #

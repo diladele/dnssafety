@@ -12,5 +12,19 @@ fi
 systemctl disable --now systemd-resolved
 systemctl stop systemd-resolved
 
+#
+# re-enable extensions https://wiki.debian.org/Cloud/MicrosoftAzure
+#
+sed -i -e 's/^Extensions\.Enabled=.*$/Extensions.Enabled=y/' /etc/waagent.conf
+sed -i -e 's/^AutoUpdate\.Enabled=.*$/AutoUpdate.Enabled=y/' /etc/waagent.conf
+
+#
+# enable login with older ssh keys (required for Azure Certification Tools)
+#
+cat <<EOT >> /etc/ssh/sshd_config.d/51-dnssafety.conf
+HostKeyAlgorithms=ssh-rsa,ssh-rsa-cert-v01@openssh.com
+PubkeyAcceptedAlgorithms=+ssh-rsa,ssh-rsa-cert-v01@openssh.com
+EOT
+
 # the Azure deployment insists on this
 sed -i 's/ClientAliveInterval 120/ClientAliveInterval 180/g' /etc/ssh/sshd_config

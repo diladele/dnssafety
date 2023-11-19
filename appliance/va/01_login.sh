@@ -2,8 +2,8 @@
 
 # all packages are installed as root
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 1>&2
-   exit 1
+    echo "This script must be run as root" 1>&2
+    exit 1
 fi
 
 # allow root login for ssh
@@ -29,4 +29,23 @@ cp dsissue.service /etc/systemd/system/dsissue.service
 # enable it
 systemctl enable dsissue.service
 
+#
+# enable network management on virtual appliance
+#
+ARCH="amd64"
+
+# see if it is RPI or not?
+cat /proc/cpuinfo | grep -m 1 ARMv7 > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    ARCH="armhf"
+fi
+
+if [ "$ARCH" != "armhf" ]; then
+    # note how we running the python from venv here
+    sudo -u daemon /opt/dnssafety-ui/env/bin/python3 /opt/dnssafety-ui/var/console/utils.py --network=debian12
+fi
+
+#
+# good
+#
 echo "Success, run next step please."

@@ -17,7 +17,7 @@ else
     NEWPASW=`curl http://169.254.169.254/latest/meta-data/instance-id`
 
     # update the password in the database 
-    sudo -u daemon python3 /opt/dnssafety-ui/var/console/reset_password.py --password=$NEWPASW
+    sudo -u daemon /opt/dnssafety-ui/env/bin/python3 /opt/dnssafety-ui/var/console/reset_password.py --password=$NEWPASW
 
     # change the template too so that user knows what shall be used as password
     sudo -u daemon sed -i "s/Passw0rd/InstanceID/g" /opt/dnssafety-ui/var/console/frame/templates/login.html

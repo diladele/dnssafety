@@ -1,0 +1,11 @@
+--- models.py	2023-11-16 09:32:19.000000000 +0100
++++ models.py.new	2023-11-18 10:00:21.045730132 +0100
+@@ -17,7 +17,7 @@
+     def can_manage_network(self):
+ 
+         # no, if run on azure - will uncomment when building image for azure
+-        #return False
++        return False
+ 
+         # for debug
+         if System.WS_WINDOWS == System.name():

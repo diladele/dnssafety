@@ -1,5 +1,5 @@
 [Unit]
-Description=Update /etc/issue file for Dns Safety virtual appliance after network is up
+Description=Update /etc/issue file for DNS Safety virtual appliance after network is up
 Wants=network-online.target
 After=network-online.target
 

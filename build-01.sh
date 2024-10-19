@@ -6,11 +6,5 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-# default os
-OSNAME="debian12"
-if [ -f "/etc/lsb-release" ]; then
-    OSNAME="ubuntu22"
-fi
-
 # run first step
-pushd core.$OSNAME && bash 01_update.sh && popd
+pushd core && bash 01_update.sh && popd

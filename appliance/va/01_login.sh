@@ -7,7 +7,10 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # our va is in amsterdam timezone
-timedatectl set-timezone "Europe/Amsterdam" 
+echo "Europe/Amsterdam" >/etc/timezone
+
+# and reset
+dpkg-reconfigure -f noninteractive tzdata
 
 # allow root login for ssh
 sed -i "s/#\{0,1\}PermitRootLogin *.*$/PermitRootLogin yes/g" /etc/ssh/sshd_config

@@ -7,6 +7,9 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # our va is in amsterdam timezone
+timedatectl set-timezone "Europe/Amsterdam" 
+
+# also store in the timezone file too
 echo "Europe/Amsterdam" >/etc/timezone
 
 # and reset

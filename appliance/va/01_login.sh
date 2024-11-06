@@ -6,15 +6,31 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
+# our va is in amsterdam timezone
+timedatectl set-timezone "Europe/Amsterdam" 
+
+# also store in the timezone file too
+echo "Europe/Amsterdam" >/etc/timezone
+
+# and reset
+dpkg-reconfigure -f noninteractive tzdata
+
 # allow root login for ssh
 sed -i "s/#\{0,1\}PermitRootLogin *.*$/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
 # install vm tools (only if vmware is detected)
 dmidecode -s system-product-name | grep -i "vmware" > /dev/null
 if [ $? -eq 0 ]; then
+
     echo "Detected VMware, installing open-vm-tools..."
     apt update > /dev/null
     apt install -y open-vm-tools
+
+
+    # reset the machine-id to force different dhcp addreses - https://kb.vmware.com/s/article/82229
+    echo -n > /etc/machine-id
+    rm /var/lib/dbus/machine-id
+    ln -s /etc/machine-id /var/lib/dbus/machine-id
 fi
 
 # copy the /etc/issue creation script to installation folder

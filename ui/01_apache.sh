@@ -9,7 +9,3 @@ fi
 # install apache and mod_wsgi and some other useful programs
 apt -y install apache2 libapache2-mod-wsgi-py3 htop mc net-tools jq \
    sudo dnsutils tmux
-
-# install kerberos client libraries
-export DEBIAN_FRONTEND=noninteractive 
-apt -y install krb5-user

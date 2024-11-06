@@ -6,19 +6,13 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-# default os
-OSNAME="debian12"
-if [ -f "/etc/lsb-release" ]; then
-    OSNAME="ubuntu20"
-fi
-
-# install dns safety
-pushd core.$OSNAME
+# install dns safety core
+pushd core
 bash 02_dnssafety.sh && bash 03_integrate.sh
 popd
 
-# install dns UI
-pushd ui.deb
+# install dns safety admin ui
+pushd ui
 bash 01_apache.sh && bash 02_ui.sh && bash 03_venv.sh && bash 04_integrate.sh
 popd
 

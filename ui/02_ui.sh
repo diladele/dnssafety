@@ -7,8 +7,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="2.0.0"
-MINOR="4B20"
+MAJOR="2.1.0"
+MINOR="B18C"
 ARCH="amd64"
 
 # see if it is RPI or not?
@@ -17,14 +17,8 @@ if [ $? -eq 0 ]; then
     ARCH="armhf"
 fi
 
-# default os
-OSNAME="debian12"
-if [ -f "/etc/lsb-release" ]; then
-    OSNAME="ubuntu22"
-fi
-
 # download
-wget https://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/$OSNAME/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
+wget https://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/debian12/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
 # install
 dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb

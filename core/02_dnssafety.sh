@@ -7,8 +7,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="2.1.0"
-MINOR="E5AD"
+MAJOR="2.2.0"
+MINOR="DF33"
 ARCH="amd64"
 
 # see if it is RPI or not?

@@ -18,7 +18,7 @@ if [ $? -eq 0 ]; then
 fi
 
 # install some utils
-apt install -y wget
+apt install -y wget mc htop tmux
 
 # download
 wget https://packages.diladele.com/dnssafety-core/$MAJOR.$MINOR/$ARCH/release/debian13/dnssafety-$MAJOR.${MINOR}_$ARCH.deb

@@ -8,7 +8,7 @@ fi
 
 # default arc
 MAJOR="3.0.0"
-MINOR="F632"
+MINOR="C2AF"
 ARCH="amd64"
 
 # see if it is RPI or not?

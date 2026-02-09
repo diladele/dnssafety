@@ -7,8 +7,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="2.1.0"
-MINOR="B18C"
+MAJOR="3.0.0"
+MINOR="55F3"
 ARCH="amd64"
 
 # see if it is RPI or not?
@@ -18,7 +18,7 @@ if [ $? -eq 0 ]; then
 fi
 
 # download
-wget https://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/debian12/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
+wget https://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/debian13/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
 # install
 dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb

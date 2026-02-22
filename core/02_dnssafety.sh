@@ -7,8 +7,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # default arc
-MAJOR="3.0.0"
-MINOR="D589"
+MAJOR="3.1.0"
+MINOR="517F"
 ARCH="amd64"
 
 # see if it is RPI or not?
@@ -18,7 +18,10 @@ if [ $? -eq 0 ]; then
 fi
 
 # install some utils
-apt install -y wget mc htop tmux
+apt install -y wget mc htop tmux 
+
+# starting from 3.1 we also manage wg
+apt install -y wireguard iptables
 
 # download
 wget https://packages.diladele.com/dnssafety-core/$MAJOR.$MINOR/$ARCH/release/debian13/dnssafety-$MAJOR.${MINOR}_$ARCH.deb

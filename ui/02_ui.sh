@@ -18,7 +18,7 @@ if [ $? -eq 0 ]; then
 fi
 
 # download
-wget https://packages.diladele.com/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/debian13/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
+wget https://www.diladele.com/pkg/dnssafety-ui/$MAJOR.$MINOR/$ARCH/release/debian13/dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb
 
 # install
 dpkg --install dnssafety-ui-$MAJOR.${MINOR}_$ARCH.deb

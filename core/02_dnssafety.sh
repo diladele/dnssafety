@@ -24,7 +24,7 @@ apt install -y wget mc htop tmux
 apt install -y wireguard iptables
 
 # download
-wget https://packages.diladele.com/dnssafety-core/$MAJOR.$MINOR/$ARCH/release/debian13/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
+wget https://www.diladele.com/pkg/dnssafety-core/$MAJOR.$MINOR/$ARCH/release/debian13/dnssafety-$MAJOR.${MINOR}_$ARCH.deb
 
 # install
 dpkg --install dnssafety-$MAJOR.${MINOR}_$ARCH.deb
